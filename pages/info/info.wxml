@@ -1,0 +1,38 @@
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名:</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入姓名" name="studentName" value="{{key}}" bindinput="keyChange"></input>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">学号:</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入学号" name="studentNum" value="{{data}}" bindinput="dataChange"></input>
+          </view>
+        </view>
+        </view>
+        <view class="btn-area">
+          <button type="primary" bindtap="showLocation">获取位置</button>
+        </view>
+        <view class="text-box" scroll-y="true" scroll-top="{{scrollTop}}">
+          <textarea disabled="false">{{location.originalData.result.sematic_description}}</textarea>
+        </view>
+        <view class="btn-area">
+          <button type="primary" form-type="submit">提交信息</button>
+        </view>
+      </form>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,3 @@
+<view class="index">
+  <button bindtap="download">下载excel</button>
+</view>
