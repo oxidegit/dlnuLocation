@@ -1,4 +1,22 @@
-<view class="index">
+<view class="container" wx:if="{{!hasPassword}}">
+  <view class="page-body">
+
+    <view class="page-section">
+      <form bindsubmit="formSubmit" bindreset="formReset">  
+        <view class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入管理员密码" name="password" value="{{data}}" bindinput="dataChange"></input>
+          </view>
+        
+          <button type="primary" form-type="submit">确认</button>
+        
+      </form>
+    </view>
+
+  </view>
+</view>
+
+
+<view class="index"  wx:else>
   <view class="index-bd">
     <view class="kind-list">
       <block wx:for-items="{{list}}" wx:key="{{item.id}}">

@@ -24,9 +24,14 @@
         <view class="btn-area">
           <button type="primary" bindtap="showLocation">获取位置</button>
         </view>
-        <view class="text-box" scroll-y="true" scroll-top="{{scrollTop}}">
-          <textarea disabled="false">{{location.originalData.result.sematic_description}}</textarea>
+
+        <view class="text-box" scroll-y="true" scroll-top="{{scrollTop}}"  wx:if="{{hasLocation}}">
+          <textarea disabled="false" name="addressText">{{address}}</textarea>
         </view>
+        <view wx:else>
+         <textarea disabled="false">位置未获取</textarea> 
+        </view>
+
         <view class="btn-area">
           <button type="primary" form-type="submit">提交信息</button>
         </view>

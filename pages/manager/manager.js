@@ -1,5 +1,9 @@
+
+
 Page({
   data: {
+    hasPassword:false,
+    password:"123456",
     list: [
       {
         id: 'function',
@@ -21,6 +25,19 @@ Page({
     this.setData({
       list: list
     });
+  }, 
+  formSubmit: function (e) {
+    var that = this;
+    var data = that.data;
+
+    if (e.detail.value.password == data.password){
+      console.log("密码正确")
+      console.log("hello")
+      console.log(that.hasPassword)
+      that.setData({
+        hasPassword: true
+      })
+    }
   }
 })
 
